@@ -3,48 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine for JT</title>
+    <title>Will You Be My Valentine?</title>
     <style>
         body {
-            background-color: pink;
-            text-align: center;
             font-family: Arial, sans-serif;
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            text-align: center;
+            background-color: #fce4ec;
+            color: #d81b60;
+            margin: 0;
+            padding: 0;
         }
+
         h1 {
-            color: red;
-            font-size: 50px;
-            text-shadow: 2px 2px white;
+            font-size: 2.5em;
+            margin-top: 50px;
         }
-        .heart {
-            position: absolute;
-            font-size: 30px;
-            animation: float 4s linear infinite;
+
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
         }
-        @keyframes float {
-            0% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(-100vh); opacity: 0; }
+
+        .teddy-bear {
+            width: 200px;
+            height: auto;
+            margin-top: 30px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-yes {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .btn-yes:hover {
+            background-color: #388e3c;
+        }
+
+        .btn-no {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .btn-no:hover {
+            background-color: #d32f2f;
         }
     </style>
 </head>
 <body>
-    <h1>💖 Would you be my Valentine, JT? 💖</h1>
-    <script>
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.innerText = "❤️";
-            heart.classList.add("heart");
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 5000);
-        }
-        setInterval(createHeart, 300);
-    </script>
+    <h1>Will You Be My Valentine?</h1>
+    <img class="teddy-bear" src="https://www.clipartmax.com/png/full/236-2364351_cute-teddy-bear-png-cute-teddy-bear.png" alt="Teddy Bear">
+    <p>I want to ask you something special, will you be my Valentine?</p>
+
+    <div class="buttons">
+        <button class="btn btn-yes" onclick="alert('Yay! You said yes! ❤️')">Yes</button>
+        <button class="btn btn-no" onclick="alert('Oh no! Maybe next time... 💔')">No</button>
+    </div>
 </body>
 </html>
+
