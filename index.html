@@ -44,9 +44,22 @@
             margin: 10px;
             border-radius: 10px;
             transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
         .btn:hover {
             background-color: #ff1a4d;
+        }
+        .response {
+            display: none;
+            font-size: 2em;
+            color: #d63384;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #yes:checked ~ .response-yes,
+        #no:checked ~ .response-no {
+            display: block;
         }
         .floating-hearts {
             position: absolute;
@@ -67,26 +80,25 @@
             100% { transform: translateY(-100px); opacity: 0; }
         }
     </style>
-    <script>
-        function handleYesClick() {
-            alert('Yay! 💖 Can't wait to celebrate together!');
-        }
-
-        function handleNoClick() {
-            alert('Oh no! 💔 But I still think you're awesome!');
-        }
-    </script>
 </head>
 <body>
     <div class="container">
         <span class="heart">❤️</span>
-        <h1 class="valentine-text">Will you be my Valentine, JT baby?</h1>
+        <h1 class="valentine-text">Will you be my Valentine, JT?</h1>
         <span class="heart">❤️</span>
+        
+        <input type="radio" id="yes" name="valentine" hidden>
+        <input type="radio" id="no" name="valentine" hidden>
+        
         <div class="button-container">
-            <button class="btn" onclick="handleYesClick()">Yes</button>
-            <button class="btn" onclick="handleNoClick()">No</button>
+            <label for="yes" class="btn">Yes</label>
+            <label for="no" class="btn">No</label>
         </div>
+        
+        <div class="response response-yes">Yay! 💖 Can't wait to celebrate together! 🎉</div>
+        <div class="response response-no">Oh no! 💔 But I still think you're awesome!</div>
     </div>
+    
     <div class="floating-hearts">
         <span>💖</span>
         <span>❤️</span>
