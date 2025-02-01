@@ -67,6 +67,15 @@
             100% { transform: translateY(-100px); opacity: 0; }
         }
     </style>
+    <script>
+        function handleYesClick() {
+            alert('Yay! 💖 Can't wait to celebrate together!');
+        }
+
+        function handleNoClick() {
+            alert('Oh no! 💔 But I still think you're awesome!');
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -74,8 +83,8 @@
         <h1 class="valentine-text">Will you be my Valentine, JT?</h1>
         <span class="heart">❤️</span>
         <div class="button-container">
-            <button class="btn">Yes</button>
-            <button class="btn">No</button>
+            <button class="btn" onclick="handleYesClick()">Yes</button>
+            <button class="btn" onclick="handleNoClick()">No</button>
         </div>
     </div>
     <div class="floating-hearts">
