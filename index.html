@@ -16,11 +16,6 @@
             margin-top: 50px;
             font-weight: bold;
         }
-        .teddy {
-            width: 150px;
-            height: auto;
-            margin: 20px;
-        }
         .heart {
             color: red;
             font-size: 2em;
@@ -36,6 +31,28 @@
             flex-direction: column;
             align-items: center;
         }
+        .button-container {
+            margin-top: 20px;
+        }
+        .btn {
+            background-color: #ff4d6d;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #ff1a4d;
+        }
+        .teddy {
+            width: 150px;
+            height: auto;
+            margin: 20px;
+        }
     </style>
 </head>
 <body>
@@ -44,9 +61,11 @@
         <h1 class="valentine-text">Will you be my Valentine, JT?</h1>
         <span class="heart">❤️</span>
         <img class="teddy" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/TeddyBear.jpg" alt="Teddy Bear">
-        <span class="heart">💖</span>
+        <div class="button-container">
+            <button class="btn">Yes</button>
+            <button class="btn">No</button>
+        </div>
         <img class="teddy" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/TeddyBear.jpg" alt="Teddy Bear">
-        <span class="heart">💖</span>
     </div>
 </body>
 </html>
