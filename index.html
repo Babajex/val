@@ -3,108 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day</title>
+    <title>Forgive Me</title>
     <style>
         body {
-            background-color: #ffe6e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            font-family: 'Courier New', Courier, monospace;
         }
-        .valentine-text {
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #d72638;
             font-size: 2.5em;
-            color: #d63384;
-            margin-top: 50px;
-            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            color: #333;
         }
         .heart {
-            color: red;
-            font-size: 2em;
-            animation: heartbeat 1.5s infinite;
+            font-size: 3em;
+            color: #d72638;
+            animation: pulse 1.5s infinite;
         }
-        @keyframes heartbeat {
+        @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.2); }
             100% { transform: scale(1); }
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .button-container {
-            margin-top: 20px;
-        }
-        .btn {
-            background-color: #ff4d6d;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            font-size: 1.5em;
-            cursor: pointer;
-            margin: 10px;
-            border-radius: 10px;
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn:hover {
-            background-color: #ff1a4d;
-        }
-        .response {
-            display: none;
-            font-size: 2em;
-            color: #d63384;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        #yes:checked ~ .response-yes,
-        #no:checked ~ .response-no {
-            display: block;
-        }
-        .floating-hearts {
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-            display: flex;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .floating-hearts span {
-            font-size: 2em;
-            animation: float 5s infinite ease-in-out;
-            margin: 0 10px;
-        }
-        @keyframes float {
-            0% { transform: translateY(0); opacity: 1; }
-            50% { transform: translateY(-50px); opacity: 0.7; }
-            100% { transform: translateY(-100px); opacity: 0; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <span class="heart">❤️</span>
-        <h1 class="valentine-text">Will you be my Valentine, JT?</h1>
-        <span class="heart">❤️</span>
-        
-        <input type="radio" id="yes" name="valentine" hidden>
-        <input type="radio" id="no" name="valentine" hidden>
-        
-        <div class="button-container">
-            <label for="yes" class="btn">Yes</label>
-            <label for="no" class="btn">No</label>
-        </div>
-        
-        <div class="response response-yes">Yay! 💖 Can't wait to celebrate together! 🎉</div>
-        <div class="response response-no">Oh no! 💔 But I still think you're awesome!</div>
-    </div>
-    
-    <div class="floating-hearts">
-        <span>💖</span>
-        <span>❤️</span>
-        <span>💗</span>
-        <span>💕</span>
-        <span>💞</span>
+        <h1>Please forgive me, Ore</h1>
+        <p>I truly regret my actions. I hope you can find it in your heart to forgive me.</p>
+        <div class="heart">❤️</div>
     </div>
 </body>
 </html>
