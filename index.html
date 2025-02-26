@@ -3,49 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forgive Me</title>
+    <title>Giveaway Spinner</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        h1 {
-            color: #d72638;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.2em;
-            color: #333;
-        }
-        .heart {
-            font-size: 3em;
-            color: #d72638;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #wheel { width: 300px; height: 300px; border-radius: 50%; border: 5px solid #000; position: relative; margin: 20px auto; overflow: hidden; }
+        .name-input { margin: 5px; }
+        #spinButton { padding: 10px 20px; font-size: 16px; cursor: pointer; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Please forgive me, Ore</h1>
-        <p>I truly regret my actions. I hope you can find it in your heart to forgive me.</p>
-        <div class="heart">❤️</div>
+    <h1>Giveaway Spinner</h1>
+    <div>
+        <h3>Enter 10 names:</h3>
+        <div id="nameInputs"></div>
+        <button onclick="generateInputs()">Generate Inputs</button>
     </div>
+    <button id="spinButton" onclick="spinWheel()" disabled>Spin the Wheel</button>
+    <h2 id="winner"></h2>
+    
+    <script>
+        function generateInputs() {
+            let container = document.getElementById("nameInputs");
+            container.innerHTML = "";
+            for (let i = 0; i < 10; i++) {
+                let input = document.createElement("input");
+                input.type = "text";
+                input.className = "name-input";
+                input.placeholder = "Enter name " + (i + 1);
+                container.appendChild(input);
+                container.appendChild(document.createElement("br"));
+            }
+            document.getElementById("spinButton").disabled = false;
+        }
+        
+        function spinWheel() {
+            let inputs = document.querySelectorAll(".name-input");
+            let names = Array.from(inputs).map(input => input.value.trim()).filter(name => name);
+            if (names.length < 10) {
+                alert("Please enter all 10 names.");
+                return;
+            }
+            let winnerIndex = Math.floor(Math.random() * names.length);
+            document.getElementById("winner").innerText = "Winner: " + names[winnerIndex] + "!";
+        }
+    </script>
 </body>
 </html>
+
