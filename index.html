@@ -3,50 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giveaway Spinner</title>
+    <title>Maths Quiz</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
-        #wheel { width: 300px; height: 300px; border-radius: 50%; border: 5px solid #000; position: relative; margin: 20px auto; overflow: hidden; }
-        .name-input { margin: 5px; }
-        #spinButton { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        #quiz { max-width: 400px; margin: auto; }
+        .hidden { display: none; color: red; font-size: 24px; }
     </style>
 </head>
 <body>
-    <h1>Giveaway Spinner</h1>
-    <div>
-        <h3>Enter 10 names:</h3>
-        <div id="nameInputs"></div>
-        <button onclick="generateInputs()">Generate Inputs</button>
-    </div>
-    <button id="spinButton" onclick="spinWheel()" disabled>Spin the Wheel</button>
-    <h2 id="winner"></h2>
-    
-    <script>
-        function generateInputs() {
-            let container = document.getElementById("nameInputs");
-            container.innerHTML = "";
-            for (let i = 0; i < 10; i++) {
-                let input = document.createElement("input");
-                input.type = "text";
-                input.className = "name-input";
-                input.placeholder = "Enter name " + (i + 1);
-                container.appendChild(input);
-                container.appendChild(document.createElement("br"));
-            }
-            document.getElementById("spinButton").disabled = false;
-        }
+    <h2>Simple Maths Quiz</h2>
+    <div id="quiz">
+        <p>1. What is 2 + 2?</p>
+        <input type="text" id="q1"><br>
         
-        function spinWheel() {
-            let inputs = document.querySelectorAll(".name-input");
-            let names = Array.from(inputs).map(input => input.value.trim()).filter(name => name);
-            if (names.length < 10) {
-                alert("Please enter all 10 names.");
-                return;
+        <p>2. What is 5 x 6?</p>
+        <input type="text" id="q2"><br>
+        
+        <p>3. What is 10 - 4?</p>
+        <input type="text" id="q3"><br>
+        
+        <p>4. What is 12 / 3?</p>
+        <input type="text" id="q4"><br>
+        
+        <p>5. Who is the funniest person in the world?</p>
+        <input type="text" id="q5"><br><br>
+        
+        <button onclick="checkAnswers()">Submit</button>
+    </div>
+    
+    <h2 id="foolBanner" class="hidden">APRIL FOOL! 🎉</h2>
+    <script>
+        function checkAnswers() {
+            let answers = ["4", "30", "6", "4", "Babajide"];
+            let correct = true;
+            
+            for (let i = 1; i <= 5; i++) {
+                let userAnswer = document.getElementById("q" + i).value.trim();
+                if (userAnswer.toLowerCase() !== answers[i - 1].toLowerCase()) {
+                    correct = false;
+                    break;
+                }
             }
-            let winnerIndex = Math.floor(Math.random() * names.length);
-            document.getElementById("winner").innerText = "Winner: " + names[winnerIndex] + "!";
+            
+            if (correct) {
+                document.getElementById("foolBanner").classList.remove("hidden");
+            } else {
+                alert("Try again! Some answers are incorrect.");
+            }
         }
     </script>
 </body>
 </html>
-
