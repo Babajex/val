@@ -3,54 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maths Quiz</title>
+    <title>Company Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        #quiz { max-width: 400px; margin: auto; }
-        .hidden { display: none; color: red; font-size: 24px; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #374151;
+        }
     </style>
 </head>
-<body>
-    <h2>Simple Maths Quiz</h2>
-    <div id="quiz">
-        <p>1. What is 2 + 2?</p>
-        <input type="text" id="q1"><br>
-        
-        <p>2. What is 5 x 6?</p>
-        <input type="text" id="q2"><br>
-        
-        <p>3. What is 10 - 4?</p>
-        <input type="text" id="q3"><br>
-        
-        <p>4. What is 12 / 3?</p>
-        <input type="text" id="q4"><br>
-        
-        <p>5. Who is the funniest person in the world?</p>
-        <input type="text" id="q5"><br><br>
-        
-        <button onclick="checkAnswers()">Submit</button>
+<body class="p-4 sm:p-8 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">Internal Communication Portal</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400">Your single source of truth for company news and documents.</p>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Announcements Section -->
+            <section class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-2xl font-semibold">Announcements</h2>
+                    <span class="text-sm font-medium text-blue-600 dark:text-blue-400">Latest</span>
+                </div>
+                <ul class="space-y-4">
+                    <li class="border-b border-gray-200 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0">
+                        <a href="#" class="block hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 rounded-lg p-2 -m-2">
+                            <h3 class="font-medium text-lg">New Policy: Remote Work Guidelines</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                An updated policy regarding flexible work arrangements has been published. Please review the new guidelines.
+                            </p>
+                            <span class="text-xs text-gray-400 dark:text-gray-500 mt-2 block">Published: Oct 25, 2024</span>
+                        </a>
+                    </li>
+                    <li class="border-b border-gray-200 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0">
+                        <a href="#" class="block hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 rounded-lg p-2 -m-2">
+                            <h3 class="font-medium text-lg">Q4 All-Hands Meeting Scheduled</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                Join us to review our quarterly performance and look ahead to the next year.
+                            </p>
+                            <span class="text-xs text-gray-400 dark:text-gray-500 mt-2 block">Published: Oct 20, 2024</span>
+                        </a>
+                    </li>
+                    <li class="border-b border-gray-200 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0">
+                        <a href="#" class="block hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 rounded-lg p-2 -m-2">
+                            <h3 class="font-medium text-lg">New Employee Onboarding Materials</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                An updated and more streamlined onboarding package is now available.
+                            </p>
+                            <span class="text-xs text-gray-400 dark:text-gray-500 mt-2 block">Published: Oct 15, 2024</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Document Repository Section -->
+            <section class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-2xl font-semibold">Shared Documents</h2>
+                    <span class="text-sm font-medium text-green-600 dark:text-green-400">Repository</span>
+                </div>
+                <div class="space-y-4">
+                    <!-- Finance Category -->
+                    <div>
+                        <h3 class="font-semibold text-gray-600 dark:text-gray-300 uppercase text-xs mb-2">Finance</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="#" class="flex items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L14.414 5A2 2 0 0115 6.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 2a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1zm6 0a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                    </svg>
+                                    <span class="text-base">Q3 Financial Report.pdf</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L14.414 5A2 2 0 0115 6.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 2a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1zm6 0a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                    </svg>
+                                    <span class="text-base">Expense Report Template.xlsx</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- HR Category -->
+                    <div>
+                        <h3 class="font-semibold text-gray-600 dark:text-gray-300 uppercase text-xs mb-2 mt-4">Human Resources</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="#" class="flex items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L14.414 5A2 2 0 0115 6.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 2a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1zm6 0a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                    </svg>
+                                    <span class="text-base">2025 Employee Handbook.pdf</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L14.414 5A2 2 0 0115 6.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 2a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1zm6 0a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                    </svg>
+                                    <span class="text-base">Benefits Enrollment Form.pdf</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
-    
-    <h2 id="foolBanner" class="hidden">APRIL FOOL! 🎉</h2>
+
+    <!-- Simple Dark Mode Toggle -->
+    <div class="fixed bottom-4 right-4">
+        <button id="darkModeToggle" class="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 focus:outline-none transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+        </button>
+    </div>
+
     <script>
-        function checkAnswers() {
-            let answers = ["4", "30", "6", "4", "Babajide"];
-            let correct = true;
-            
-            for (let i = 1; i <= 5; i++) {
-                let userAnswer = document.getElementById("q" + i).value.trim();
-                if (userAnswer.toLowerCase() !== answers[i - 1].toLowerCase()) {
-                    correct = false;
-                    break;
-                }
-            }
-            
-            if (correct) {
-                document.getElementById("foolBanner").classList.remove("hidden");
-            } else {
-                alert("Try again! Some answers are incorrect.");
-            }
-        }
+        document.getElementById('darkModeToggle').addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
     </script>
 </body>
 </html>
