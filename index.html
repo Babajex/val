@@ -3,136 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company Portal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>A Simple Math Quiz</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: #374151;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: left;
+        }
+        input[type="number"] {
+            padding: 8px;
+            margin-left: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 80px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #d35400; /* Default color for results */
+        }
+        .success-message {
+            color: #27ae60; /* Green for success */
+            font-size: 1.5em;
+            padding: 10px;
+            border: 2px solid #27ae60;
+            background-color: #e8f8f5;
+            border-radius: 5px;
         }
     </style>
 </head>
-<body class="p-4 sm:p-8 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+<body>
 
-    <div class="max-w-4xl mx-auto">
-        <!-- Header -->
-        <header class="text-center mb-10">
-            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">Internal Communication Portal</h1>
-            <p class="text-lg text-gray-600 dark:text-gray-400">Your single source of truth for company news and documents.</p>
-        </header>
+    <div class="container">
+        <h1>Simple Math Challenge</h1>
+        <p>Answer all questions correctly to reveal a special message!</p>
 
-        <!-- Main Content Grid -->
-        <main class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="question">
+            <label for="q1">1. What is $7 + 5$?</label>
+            <input type="number" id="q1">
+        </div>
 
-            <!-- Announcements Section -->
-            <section class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
-                <div class="flex items-center justify-between mb-4">
-                    <h2 class="text-2xl font-semibold">Announcements</h2>
-                    <span class="text-sm font-medium text-blue-600 dark:text-blue-400">Latest</span>
-                </div>
-                <ul class="space-y-4">
-                    <li class="border-b border-gray-200 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0">
-                        <a href="#" class="block hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 rounded-lg p-2 -m-2">
-                            <h3 class="font-medium text-lg">New Policy: Remote Work Guidelines</h3>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                                An updated policy regarding flexible work arrangements has been published. Please review the new guidelines.
-                            </p>
-                            <span class="text-xs text-gray-400 dark:text-gray-500 mt-2 block">Published: Oct 25, 2024</span>
-                        </a>
-                    </li>
-                    <li class="border-b border-gray-200 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0">
-                        <a href="#" class="block hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 rounded-lg p-2 -m-2">
-                            <h3 class="font-medium text-lg">Q4 All-Hands Meeting Scheduled</h3>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                                Join us to review our quarterly performance and look ahead to the next year.
-                            </p>
-                            <span class="text-xs text-gray-400 dark:text-gray-500 mt-2 block">Published: Oct 20, 2024</span>
-                        </a>
-                    </li>
-                    <li class="border-b border-gray-200 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0">
-                        <a href="#" class="block hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 rounded-lg p-2 -m-2">
-                            <h3 class="font-medium text-lg">New Employee Onboarding Materials</h3>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                                An updated and more streamlined onboarding package is now available.
-                            </p>
-                            <span class="text-xs text-gray-400 dark:text-gray-500 mt-2 block">Published: Oct 15, 2024</span>
-                        </a>
-                    </li>
-                </ul>
-            </section>
+        <div class="question">
+            <label for="q2">2. What is $10 - 3$?</label>
+            <input type="number" id="q2">
+        </div>
 
-            <!-- Document Repository Section -->
-            <section class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
-                <div class="flex items-center justify-between mb-4">
-                    <h2 class="text-2xl font-semibold">Shared Documents</h2>
-                    <span class="text-sm font-medium text-green-600 dark:text-green-400">Repository</span>
-                </div>
-                <div class="space-y-4">
-                    <!-- Finance Category -->
-                    <div>
-                        <h3 class="font-semibold text-gray-600 dark:text-gray-300 uppercase text-xs mb-2">Finance</h3>
-                        <ul class="space-y-2">
-                            <li>
-                                <a href="#" class="flex items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-3" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L14.414 5A2 2 0 0115 6.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 2a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1zm6 0a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="text-base">Q3 Financial Report.pdf</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-3" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L14.414 5A2 2 0 0115 6.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 2a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1zm6 0a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="text-base">Expense Report Template.xlsx</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+        <div class="question">
+            <label for="q3">3. What is $2 \times 4$?</label>
+            <input type="number" id="q3">
+        </div>
 
-                    <!-- HR Category -->
-                    <div>
-                        <h3 class="font-semibold text-gray-600 dark:text-gray-300 uppercase text-xs mb-2 mt-4">Human Resources</h3>
-                        <ul class="space-y-2">
-                            <li>
-                                <a href="#" class="flex items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-3" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L14.414 5A2 2 0 0115 6.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 2a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1zm6 0a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="text-base">2025 Employee Handbook.pdf</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-3" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L14.414 5A2 2 0 0115 6.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 2a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1zm6 0a1 1 0 00-1 1v9a1 1 0 102 0V7a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="text-base">Benefits Enrollment Form.pdf</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
+        <button onclick="checkAnswers()">Submit Answers</button>
 
-    <!-- Simple Dark Mode Toggle -->
-    <div class="fixed bottom-4 right-4">
-        <button id="darkModeToggle" class="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 focus:outline-none transition-colors duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-            </svg>
-        </button>
+        <div id="result"></div>
     </div>
 
     <script>
-        document.getElementById('darkModeToggle').addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-        });
-    </script>
-</body>
-</html>
+        function checkAnswers() {
