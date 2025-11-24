@@ -2,68 +2,173 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Simple Math Game 2.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plus-One Acquisition Protocol (December)</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 40px; background-color: #e6f7ff; }
-        .quiz-box { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); max-width: 400px; margin: 0 auto; }
-        .question { margin-bottom: 15px; text-align: left; }
-        input[type="number"] { padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 60px; margin-left: 10px; }
-        button { background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px; }
-        button:hover { background-color: #0056b3; }
-        #output { margin-top: 25px; font-size: 1.4em; font-weight: bold; color: #28a745; }
+        /* Custom font import for a festive, bold look */
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&display=swap');
+        
+        :root {
+            --primary-color: #EF4444; /* Red 500 */
+            --secondary-color: #10B981; /* Emerald 500 */
+            --bg-color: #1F2937; /* Gray 800 */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(#374151 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Custom button styling for drama */
+        .cta-button {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button-yes {
+            background-color: var(--secondary-color);
+            color: var(--bg-color);
+        }
+
+        .cta-button-no {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Ensure the main container scrolls if content is too large on tiny screens */
+        #container {
+            min-height: 100vh;
+        }
+
+        /* Dramatic pulsing text for the main prompt */
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 5px rgba(239, 68, 68, 0.7)); }
+            50% { filter: drop-shadow(0 0 15px rgba(239, 68, 68, 1)); }
+        }
+
+        #prompt-title {
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
     </style>
 </head>
-<body>
+<body class="p-4 flex items-center justify-center">
 
-    <div class="quiz-box">
-        <h1>Quick Math Test!</h1>
-        <p>Get all three right for a surprise message.</p>
+    <div id="container" class="w-full max-w-2xl bg-gray-900 border-4 border-red-500 rounded-xl p-6 md:p-10 shadow-2xl transition-all duration-300">
+        
+        <!-- HEADER / INITIAL STATE -->
+        <header id="header-state" class="text-center transition-opacity duration-500">
+            <h1 id="prompt-title" class="text-4xl md:text-5xl font-extrabold text-red-500 mb-4 font-['Bebas_Neue'] tracking-wider">
+                TRANSMISSION INITIATED
+            </h1>
+            <p class="text-xl text-gray-300 font-semibold mb-8">
+                A critical mission briefing awaits. Clearance required.
+            </p>
+            <button onclick="revealProtocol()" class="cta-button cta-button-yes px-8 py-3 rounded-lg text-lg hover:bg-emerald-400">
+                ACCESS BRIEFING
+            </button>
+        </header>
 
-        <div class="question">
-            <label for="ans1">1. $4 + 5$ =</label>
-            <input type="number" id="ans1">
-        </div>
+        <!-- MAIN PROTOCOL / HIDDEN STATE -->
+        <main id="protocol-content" class="hidden opacity-0 transition-opacity duration-1000">
+            <h2 class="text-3xl md:text-4xl font-bold text-red-500 mb-6 border-b pb-2 border-red-700 font-['Bebas_Neue'] tracking-wider">
+                PROTOCOL 12-ONE: PLUS-ONE ACQUISITION
+            </h2>
 
-        <div class="question">
-            <label for="ans2">2. $8 + 2$ =</label>
-            <input type="number" id="ans2">
-        </div>
+            <p class="text-gray-300 mb-4 text-lg">
+                <span class="font-bold text-red-400">[ATTENTION AGENT]</span>
+                The operative designated [Your Name] requires immediate assistance. The calendar month of December 
+                is saturated with potential social hazards, including holiday parties, awkward family gatherings, and 
+                the dreaded "couple's skate" event (status: UNCONFIRMED).
+            </p>
 
-        <div class="question">
-            <label for="ans3">3. $11 + 3$ =</label>
-            <input type="number" id="ans3">
-        </div>
+            <p class="text-gray-300 mb-6 text-lg">
+                Your mission, should you choose to accept it, is to serve as the exclusive, high-level **Plus-One**
+                for all December operations. Your duties include, but are not limited to: high-fiving, emergency exit 
+                strategy development, and the tactical consumption of complimentary hors d'oeuvres.
+            </p>
 
-        <button onclick="checkAnswers()">Submit Answers</button>
+            <p class="text-xl font-bold text-emerald-400 text-center mt-8 mb-10">
+                <span class="text-red-500">CLASSIFIED QUESTION:</span> Will you accept this month-long co-pilot role?
+            </p>
 
-        <div id="output"></div>
+            <!-- ACTION BUTTONS -->
+            <div id="action-buttons" class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button onclick="handleResponse('yes')" class="cta-button cta-button-yes px-6 py-4 rounded-xl text-xl hover:bg-emerald-400 w-full sm:w-auto">
+                    ACCEPT MISSION (RSVP YES)
+                </button>
+                <button onclick="handleResponse('no')" class="cta-button cta-button-no px-6 py-4 rounded-xl text-xl hover:bg-red-600 w-full sm:w-auto">
+                    EJECT (RSVP NO)
+                </button>
+            </div>
+
+            <!-- RESPONSE MESSAGE (Hidden initially) -->
+            <div id="response-message" class="mt-12 p-4 rounded-lg text-center hidden">
+                <!-- Content set by JS -->
+            </div>
+        </main>
+
     </div>
 
     <script>
-        // The function that runs when the button is clicked
-        function checkAnswers() {
-            // 1. Get the values from the input fields
-            const answer1 = parseInt(document.getElementById('ans1').value);
-            const answer2 = parseInt(document.getElementById('ans2').value);
-            const answer3 = parseInt(document.getElementById('ans3').value);
+        // Use a UUID for a unique session ID (just for fun)
+        const sessionId = crypto.randomUUID();
 
-            // 2. Define the correct answers
-            const correct1 = 9;  // 4 + 5
-            const correct2 = 10; // 8 + 2
-            const correct3 = 14; // 11 + 3
+        function revealProtocol() {
+            // Hide the header and show the main content
+            const header = document.getElementById('header-state');
+            const content = document.getElementById('protocol-content');
+            
+            header.style.opacity = '0';
+            setTimeout(() => {
+                header.classList.add('hidden');
+                content.classList.remove('hidden');
+                // Use a short delay before setting opacity to trigger the transition
+                setTimeout(() => {
+                    content.style.opacity = '1';
+                }, 50); 
+            }, 500); // Must match the header transition duration
+        }
 
-            // 3. Check if all answers are correct
-            if (answer1 === correct1 && answer2 === correct2 && answer3 === correct3) {
-                // SUCCESS MESSAGE!
-                document.getElementById('output').innerHTML = 'Aderayo is a fine girl! 🎉';
-                document.getElementById('output').style.color = '#28a745'; // Green
+        function handleResponse(answer) {
+            const messageDiv = document.getElementById('response-message');
+            const buttonsDiv = document.getElementById('action-buttons');
+            
+            let messageHtml = '';
+
+            if (answer === 'yes') {
+                messageDiv.classList.remove('bg-red-900/50', 'text-red-300');
+                messageDiv.classList.add('bg-emerald-900/50', 'text-emerald-300');
+                messageHtml = `
+                    <h3 class="text-2xl font-['Bebas_Neue'] tracking-widest mb-2">MISSION ACCEPTED</h3>
+                    <p class="text-lg">December is secured! Your Plus-One status has been activated (Reference ID: ${sessionId.substring(0, 8)}). Prepare for immediate deployment and excellent snacks.</p>
+                `;
             } else {
-                // FAILURE MESSAGE
-                document.getElementById('output').innerHTML = 'Oops! Keep trying.';
-                document.getElementById('output').style.color = '#dc3545'; // Red
+                messageDiv.classList.remove('bg-emerald-900/50', 'text-emerald-300');
+                messageDiv.classList.add('bg-red-900/50', 'text-red-300');
+                messageHtml = `
+                    <h3 class="text-2xl font-['Bebas_Neue'] tracking-widest mb-2">PROTOCOL FAILED</h3>
+                    <p class="text-lg">Affirmative. Ejection successful. Initiating lonely mission protocol... (It's fine. We'll be fine. Totally fine.)</p>
+                `;
             }
+
+            // Update and show the message
+            messageDiv.innerHTML = messageHtml;
+            messageDiv.classList.remove('hidden');
+
+            // Optionally, disable the main buttons after a choice is made
+            buttonsDiv.classList.add('pointer-events-none', 'opacity-50');
         }
     </script>
-
 </body>
 </html>
