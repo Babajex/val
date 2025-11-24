@@ -1,19 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plus-One Acquisition Protocol (December)</title>
+    <title>A December Co-Pilot Contract</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom font import for a festive, bold look */
+        /* Custom font import for a warm, bold look */
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&display=swap');
         
         :root {
-            --primary-color: #EF4444; /* Red 500 */
-            --secondary-color: #10B981; /* Emerald 500 */
-            --bg-color: #1F2937; /* Gray 800 */
+            --primary-color: #D97706; /* Amber 600 - Warm Gold */
+            --secondary-color: #059669; /* Emerald 600 - Deep Green */
+            --bg-color: #1F2937; /* Dark Gray 800 */
         }
 
         body {
@@ -33,7 +34,8 @@
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            /* Soften the shadow for romance */
+            box-shadow: 0 8px 12px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
         }
 
         .cta-button-yes {
@@ -42,7 +44,7 @@
         }
 
         .cta-button-no {
-            background-color: var(--primary-color);
+            background-color: #EF4444; /* Standard Red */
             color: white;
         }
 
@@ -51,10 +53,10 @@
             min-height: 100vh;
         }
 
-        /* Dramatic pulsing text for the main prompt */
+        /* Dramatic pulsing text for the main prompt, now in warm gold */
         @keyframes pulse-glow {
-            0%, 100% { filter: drop-shadow(0 0 5px rgba(239, 68, 68, 0.7)); }
-            50% { filter: drop-shadow(0 0 15px rgba(239, 68, 68, 1)); }
+            0%, 100% { filter: drop-shadow(0 0 5px rgba(217, 119, 6, 0.7)); }
+            50% { filter: drop-shadow(0 0 15px rgba(217, 119, 6, 1)); }
         }
 
         #prompt-title {
@@ -64,51 +66,50 @@
 </head>
 <body class="p-4 flex items-center justify-center">
 
-    <div id="container" class="w-full max-w-2xl bg-gray-900 border-4 border-red-500 rounded-xl p-6 md:p-10 shadow-2xl transition-all duration-300">
+    <div id="container" class="w-full max-w-2xl bg-gray-900 border-4 border-amber-600 rounded-xl p-6 md:p-10 shadow-2xl transition-all duration-300">
         
         <!-- HEADER / INITIAL STATE -->
         <header id="header-state" class="text-center transition-opacity duration-500">
-            <h1 id="prompt-title" class="text-4xl md:text-5xl font-extrabold text-red-500 mb-4 font-['Bebas_Neue'] tracking-wider">
-                TRANSMISSION INITIATED
+            <h1 id="prompt-title" class="text-4xl md:text-5xl font-extrabold text-amber-500 mb-4 font-['Bebas_Neue'] tracking-wider">
+                A DECEMBER PROPOSAL
             </h1>
             <p class="text-xl text-gray-300 font-semibold mb-8">
-                A critical mission briefing awaits. Clearance required.
+                A highly classified, high-stakes contract requires your signature.
             </p>
             <button onclick="revealProtocol()" class="cta-button cta-button-yes px-8 py-3 rounded-lg text-lg hover:bg-emerald-400">
-                ACCESS BRIEFING
+                VIEW CONTRACT DETAILS
             </button>
         </header>
 
         <!-- MAIN PROTOCOL / HIDDEN STATE -->
         <main id="protocol-content" class="hidden opacity-0 transition-opacity duration-1000">
-            <h2 class="text-3xl md:text-4xl font-bold text-red-500 mb-6 border-b pb-2 border-red-700 font-['Bebas_Neue'] tracking-wider">
-                PROTOCOL 12-ONE: PLUS-ONE ACQUISITION
+            <h2 class="text-3xl md:text-4xl font-bold text-amber-500 mb-6 border-b pb-2 border-amber-700 font-['Bebas_Neue'] tracking-wider">
+                OPERATION MISTLETOE: THE CO-PILOT CONTRACT
             </h2>
 
             <p class="text-gray-300 mb-4 text-lg">
-                <span class="font-bold text-red-400">[ATTENTION AGENT]</span>
-                The operative designated [Your Name] requires immediate assistance. The calendar month of December 
-                is saturated with potential social hazards, including holiday parties, awkward family gatherings, and 
-                the dreaded "couple's skate" event (status: UNCONFIRMED).
+                <span class="font-bold text-amber-400">[TO: Aderayo]</span>
+                I, **Babajide**, require your presence. The season of December is upon us—a time of unparalleled magic, 
+                but also one that demands a trusted ally to navigate its festive (and often chaotic) waters.
             </p>
 
             <p class="text-gray-300 mb-6 text-lg">
-                Your mission, should you choose to accept it, is to serve as the exclusive, high-level **Plus-One**
-                for all December operations. Your duties include, but are not limited to: high-fiving, emergency exit 
-                strategy development, and the tactical consumption of complimentary hors d'oeuvres.
+                This contract proposes that you become my exclusive, high-level **Co-Pilot** for all December adventures. 
+                Your duties include, but are not limited to: creating unforgettable memories, ensuring maximum cheer, 
+                and the mandatory hand-holding during any perceived moment of chilliness.
             </p>
 
             <p class="text-xl font-bold text-emerald-400 text-center mt-8 mb-10">
-                <span class="text-red-500">CLASSIFIED QUESTION:</span> Will you accept this month-long co-pilot role?
+                <span class="text-amber-500">THE QUESTION:</span> Will you sign on as my official Plus-One, making this my favorite December yet?
             </p>
 
             <!-- ACTION BUTTONS -->
             <div id="action-buttons" class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <button onclick="handleResponse('yes')" class="cta-button cta-button-yes px-6 py-4 rounded-xl text-xl hover:bg-emerald-400 w-full sm:w-auto">
-                    ACCEPT MISSION (RSVP YES)
+                    I ACCEPT THE CONTRACT (YES!)
                 </button>
                 <button onclick="handleResponse('no')" class="cta-button cta-button-no px-6 py-4 rounded-xl text-xl hover:bg-red-600 w-full sm:w-auto">
-                    EJECT (RSVP NO)
+                    I MUST DECLINE (NO)
                 </button>
             </div>
 
@@ -150,15 +151,15 @@
                 messageDiv.classList.remove('bg-red-900/50', 'text-red-300');
                 messageDiv.classList.add('bg-emerald-900/50', 'text-emerald-300');
                 messageHtml = `
-                    <h3 class="text-2xl font-['Bebas_Neue'] tracking-widest mb-2">MISSION ACCEPTED</h3>
-                    <p class="text-lg">December is secured! Your Plus-One status has been activated (Reference ID: ${sessionId.substring(0, 8)}). Prepare for immediate deployment and excellent snacks.</p>
+                    <h3 class="text-2xl font-['Bebas_Neue'] tracking-widest mb-2">CONTRACT SIGNED!</h3>
+                    <p class="text-lg">December is officially magical! Your Co-Pilot status has been activated (Reference ID: ${sessionId.substring(0, 8)}). Get ready for endless cheer and me, Babajide, by your side.</p>
                 `;
             } else {
                 messageDiv.classList.remove('bg-emerald-900/50', 'text-emerald-300');
                 messageDiv.classList.add('bg-red-900/50', 'text-red-300');
                 messageHtml = `
-                    <h3 class="text-2xl font-['Bebas_Neue'] tracking-widest mb-2">PROTOCOL FAILED</h3>
-                    <p class="text-lg">Affirmative. Ejection successful. Initiating lonely mission protocol... (It's fine. We'll be fine. Totally fine.)</p>
+                    <h3 class="text-2xl font-['Bebas_Neue'] tracking-widest mb-2">HEARTBREAK PROTOCOL INITIATED</h3>
+                    <p class="text-lg">Understood. Contract rejected. Initiating self-pity mode. (Just kidding! But seriously, I'll miss you. Let's still hang out!)</p>
                 `;
             }
 
